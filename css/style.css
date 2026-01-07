@@ -1,7 +1,28 @@
 *{
-    color:black;
+    color:brown;
     text-align: center;
-background: lightblue url("img_tree.gif") no-repeat fixed center;
-  
+background: lightblue url("https://devsnap.nyc3.digitaloceanspaces.com/devsnap.me/codeno-repeat fixed centerpen-gwkKwd.png")no-repeat fixed center;
+body {
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button {
+  background: #007BFF;
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+ 
 
 }
