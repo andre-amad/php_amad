@@ -7,7 +7,7 @@
      <?php
 include "resources/navigators.php";
     ?>
-    <h1> This is Create page</h1>
+    <h1> This is Create page </h1>
 
 </body>
 

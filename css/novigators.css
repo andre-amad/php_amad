@@ -18,3 +18,7 @@
   color: #1e1e2f;
   border-radius: 4px;
 }
+
+table, th, td{
+  border:#1e1e2f solid 1px;
+}

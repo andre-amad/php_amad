@@ -1,5 +1,5 @@
 <?php
-$list = ['jont','jane', 'june',];
+$list = ['alea','iya', 'marchel','chaff','latreel', 'andre',];
 ?>
 
 
@@ -13,6 +13,37 @@ $list = ['jont','jane', 'june',];
 include "resources/navigators.php";
     ?>
     <h1> This is retrieve  page</h1>
+
+    <?php
+    foreach($list as $item){
+     ?>   
+
+    <li> <?= $item?> </li>
+
+<?php
+    }
+?>
+</ul>
+<table>
+  <tr>
+      <th>Name</th>
+      <th>Action</th>     
+</tr>
+
+
+<?php
+    foreach($list as $item){
+     ?>   
+
+          <tr>
+            <td><?=  $item?> </td>
+            <td><button>view</button></td>
+          </tr>
+<?php
+    }
+?>
+</table>
+
 
 </body>
 

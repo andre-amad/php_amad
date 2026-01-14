@@ -1,21 +1,24 @@
-*{
-    color:brown;
-    text-align: center;
-background: lightblue url("https://devsnap.nyc3.digitaloceanspaces.com/devsnap.me/codeno-repeat fixed centerpen-gwkKwd.png")no-repeat fixed center;
+* {
+  color: brown;
+  text-align: center;
+}
+
 body {
-  background: url("background.jpg") no-repeat center center fixed;
+  background: lightblue url("https://devsnap.nyc3.digitaloceanspaces.com/devsnap.me/codepen-gwkKwd.png")
+              no-repeat center center fixed;
   background-size: cover;
   color: #fff;
-  text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 button {
   background: #007BFF;
   border: none;
   color: #fff;
-  padding: 10px 25px;
+  padding: 12px 28px;
   border-radius: 6px;
   font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -23,6 +26,6 @@ button {
 button:hover {
   background: #0056b3;
 }
- 
-
+table, th, td{
+  border:#1e1e2f solid 1px;
 }
