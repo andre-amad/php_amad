@@ -1,3 +1,8 @@
+<?php
+$list = ['jont','jane', 'june',];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
  <?php
