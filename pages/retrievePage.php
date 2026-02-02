@@ -38,10 +38,10 @@ include "resources/header.php";
 
             <tr>
                 <td><?= $item["names"] ?> </td>
-                  <td><?= $item["age"] ?> </td>
-                  <td><?= $item["address"] ?> </td>
-                  <td><?= $item["username"] ?> </td>
-                <td><button>view</button></td>
+                <td><?= $item["age"] ?> </td>
+                <td><?= $item["address"] ?> </td>
+                <td><?= $item["username"] ?> </td>
+                <td><a href="viewpages.php?user_id=<?= $item['user_id']?>">view</a></td>
             </tr>
         <?php
         }

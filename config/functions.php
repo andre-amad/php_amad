@@ -28,6 +28,17 @@ include "connection.php";
      return $count;
 
 }
+function getUser($user_id)
+{
+    include "connection.php";
+    
+    $sql = "SELECT * FROM user  WHERE user_id = :id";
+    $stmnt = $conn->prepare($sql); 
+      $stmnt->execute([
+        "id" => $user_id
 
+      ]);
+      return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 ?>
