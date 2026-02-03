@@ -28,7 +28,7 @@ include "connection.php";
      return $count;
 
 }
-function getUser($user_id)
+function getUserById($user_id)
 {
     include "connection.php";
     
@@ -41,4 +41,23 @@ function getUser($user_id)
       return $stmnt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getUserByPod($pod_id)
+{
+    include "connection.php";
+    
+    $sql = "SELECT * FROM user  WHERE user_id = :id";
+    $stmnt = $conn->prepare($sql); 
+      $stmnt->execute([
+        "id" => $pod_id
+
+      ]);
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+    echo $row['name'];
+    echo $row['age'];
+    echo $row['address'];
+    echo $row['user_name'];
+
+  
+
+  }
 ?>
