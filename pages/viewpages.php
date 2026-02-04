@@ -4,7 +4,15 @@ include "../config/includes.php";
 if (isset($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
 
-    $getUser = getUser($user_id);
+    $getUser =  getUserById($user_id);
+} else {
+    echo "<script> window.location.href='retrievePage.php' </script";
+}
+
+if (isset($_GET['prod_id'])) {
+    $prod_id = $_GET['prod_id'];
+
+    $getProd =  getProduct($prod_id);
 } else {
     echo "<script> window.location.href='retrievePage.php' </script";
 }
@@ -29,5 +37,14 @@ include "resources/header.php";
     <h1>username: <?= $getUser[0] ['username'] ?></h1>
 
     <a href="">Edit</a>
+
+    <h1>pod_name: <?= $getProd[0]['pod_name'] ?></h1>
+    <h1>prod_quantity: <?= $getProd[0]['prod_quantity'] ?></h1>
+    <h1>prod_type: <?= $getProd[0]['prod_tyoe'] ?></h1>
+    <h1>prod_price: <?= $getProd[0]['prod_price'] ?></h1>
+    <h1>prod_date_added: <?= $getProd[0]['prod_date_added'] ?></h1>
+
+    <a href="">Edit</a>
+
 
 </body>

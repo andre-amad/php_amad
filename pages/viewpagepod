@@ -2,34 +2,28 @@
 include "../config/includes.php";
 
 if (isset($_GET['prod_id'])) {
-    $prod_id = $_GET['[prod_id'];
-
-    $getUser =getUserByPod ($prod_id);
+    $prod_id = $_GET['prod_id'];
+    $getprod = getUserByProd($prod_id);
 } else {
-    echo "<script> window.location.href='retrievePage.php' </script";
+    echo "<script>window.location.href='retrievePage.php'</script>";
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
-<?php
-include "resources/header.php";
-?>
+<?php include "resources/header.php"; ?>
 
 <body>
-    <?php
-    include "resources/navigators.php";
-    ?>
+    <?php include "resources/navigators.php"; ?>
 
-    <h1>pod_name: <?= $getUser[0] ['"pod_name"'] ?></h1>
-    <h1>prod_quanlity: <?= $getUser[0] ['prod_quanlity'] ?></h1>
-    <h1>prod_tyoe: <?= $getUser[0] ['prod_tyoe'] ?></h1>
-    <h1>prod_price: <?= $getUser[0] ['prod_price'] ?></h1>
-    <h1>prod_date_added: <?= $getUser[0] ['prod_date_added'] ?></h1>
-    
+    <h1>pod_name: <?= $getUser[0]['pod_name'] ?></h1>
+    <h1>prod_quantity: <?= $getUser[0]['prod_quantity'] ?></h1>
+    <h1>prod_type: <?= $getUser[0]['prod_typoe'] ?></h1>
+    <h1>prod_price: <?= $getUser[0]['prod_price'] ?></h1>
+    <h1>prod_date_added: <?= $getUser[0]['prod_date_added'] ?></h1>
 
     <a href="">Edit</a>
 
 </body>
+
+</html

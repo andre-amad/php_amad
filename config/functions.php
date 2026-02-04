@@ -1,63 +1,67 @@
 <?php
-function retrieveAlluser(){
-include "connection.php";
+function retrieveAlluser()
+{
+  include "connection.php";
 
-      $sql = "SELECT * FROM user";
-    $stmnt = $conn -> prepare($sql);
-     $stmnt->execute();
+  $sql = "SELECT * FROM user";
+  $stmnt = $conn->prepare($sql);
+  $stmnt->execute();
 
 
-     return $stmnt->fetchAll(PDO::FETCH_ASSOC);
-
+  return $stmnt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function loginAuth($usernames, $passwords){
+function retrieveAllproducts()
+{
+  include "connection.php";
 
-include "connection.php";
+  $sql = "SELECT * FROM products";
+  $stmnt = $conn->prepare($sql);
+  $stmnt->execute();
 
-    $sql = "SELECT * FROM user  WHERE username = :username AND password = :password";
-    $stmnt = $conn->prepare($sql);
-    $stmnt->execute([
-        "username" => $usernames,
-        "password" => $passwords
-    
-    ]);
 
-     $count = $stmnt -> rowCount();
+  return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+}
 
-     return $count;
+function loginAuth($usernames, $passwords)
+{
 
+  include "connection.php";
+
+  $sql = "SELECT * FROM user  WHERE username = :username AND password = :password";
+  $stmnt = $conn->prepare($sql);
+  $stmnt->execute([
+    "username" => $usernames,
+    "password" => $passwords
+
+  ]);
+
+  $count = $stmnt->rowCount();
+
+  return $count;
 }
 function getUserById($user_id)
 {
-    include "connection.php";
-    
-    $sql = "SELECT * FROM user  WHERE user_id = :id";
-    $stmnt = $conn->prepare($sql); 
-      $stmnt->execute([
-        "id" => $user_id
+  include "connection.php";
 
-      ]);
-      return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+  $sql = "SELECT * FROM user  WHERE user_id = :id";
+  $stmnt = $conn->prepare($sql);
+  $stmnt->execute([
+    "id" => $user_id
+
+  ]);
+  return $stmnt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserByPod($pod_id)
+function getProduct($prod_id)
 {
-    include "connection.php";
-    
-    $sql = "SELECT * FROM user  WHERE user_id = :id";
-    $stmnt = $conn->prepare($sql); 
-      $stmnt->execute([
-        "id" => $pod_id
+  include "connection.php";
 
-      ]);
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-    echo $row['name'];
-    echo $row['age'];
-    echo $row['address'];
-    echo $row['user_name'];
-
-  
-
-  }
+  $sql = "SELECT * FROM products WHERE prod_id = :id";
+  $stmnt = $conn->prepare($sql);
+  $stmnt->execute([
+    "id" => $prod_id
+  ]);
+  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>

@@ -1,7 +1,7 @@
 <?php
 include "../../config/includes.php";
 
-if (isset($_POST['user_name']) && isset($_POST['user_age']) && isset($_POST['user_address'])) {
+if (isset($_POST['pod_name']) && isset($_POST['user_age']) && isset($_POST['user_address'])) {
     $user_name = $_POST['user_name'];
     $user_age = $_POST['user_age'];
     $user_address = $_POST['user_address'];

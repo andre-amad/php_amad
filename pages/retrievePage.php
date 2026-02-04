@@ -1,7 +1,7 @@
-
 <?php
 include "../config/includes.php";
 $list = retrieveAlluser();
+$prod = retrieveAllProducts();
 
 // echo json_encode($list);
 
@@ -20,59 +20,62 @@ include "resources/header.php";
     ?>
     <h1> This is retrieve page</h1>
 
-    
+
     <table>
         <tr>
             <th>name</th>
-           <th>age</th>
+            <th>age</th>
             <th>address</th>
-             <th>user name</th>
+            <th>user name</th>
             <th>Action</th>
-            
+
         </tr>
 
 
         <?php
         foreach ($list as $item) {
-            
-        }
         ?>
-    
-            <tr>
-                <td><?= $item["names"] ?> </td>
-                <td><?= $item["age"] ?> </td>
-                <td><?= $item["address"] ?> </td>
-                <td><?= $item["username"] ?> </td>
-                <td><a href="viewpages.php?user_id=<?= $item['user_id']?>">view</a></td>
-            </tr>
 
-            <table>
         <tr>
-            <th>name</th>
-           <th>age</th>
-            <th>address</th>
-             <th>user name</th>
-            <th>Action</th>
-            
+            <td><?= $item["names"] ?> </td>
+            <td><?= $item["age"] ?> </td>
+            <td><?= $item["address"] ?> </td>
+            <td><?= $item["username"] ?> </td>
+            <td><a href="viewpages.php?user_id=<?= $item['user_id'] ?>">view</a></td>
         </tr>
-    
-
         <?php
-        foreach ($list as $item) {
-        ?>
+            }
+            ?>
 
+        <table>
             <tr>
-                <td><?= $item["pod_name"] ?> </td>
-                <td><?= $item["prod_quanlity"] ?> </td>
-                <td><?= $item["prod_tyoe"] ?> </td>
-                <td><?= $item["prod_price"] ?> </td>
-                <td><?= $item["prod_date_added"] ?> </td>
-                <td><a href="viewpagepod?user_id=<?= $item['user_id']?>">view</a></td>
+                <th>name</th>
+                <th>age</th>
+                <th>address</th>
+                <th>user name</th>
+                <th>Action</th>
+
             </tr>
-        <?php
-        }
-        ?>
-    </table>
+       <?php
+            
+            ?>
+
+            <?php
+            foreach ($prod as $prods) {
+            ?>
+
+                <tr>
+                    <td><?= $prods["pod_name"] ?> </td>
+                    <td><?= $prods["prod_quantity"] ?> </td>
+                    <td><?= $prods["prod_tyoe"] ?> </td>
+                    <td><?= $prods["prod_price"] ?> </td>
+                    <td><?= $prods["prod_date_added"] ?> </td>
+                    <td><a href="viewpages.php?prod_id=<?= $prods['prod_id'] ?>">view</a></td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
 
 
 </body>
