@@ -70,7 +70,7 @@ include "resources/header.php";
                     <td><?= $prods["prod_tyoe"] ?> </td>
                     <td><?= $prods["prod_price"] ?> </td>
                     <td><?= $prods["prod_date_added"] ?> </td>
-                    <td><a href="viewpages.php?prod_id=<?= $prods['prod_id'] ?>">view</a></td>
+                    <td><a href="viewProduct.php?prod_id=<?= $prods['prod_id'] ?>">view</a></td>
                 </tr>
             <?php
             }

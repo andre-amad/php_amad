@@ -9,14 +9,6 @@ if (isset($_GET['user_id'])) {
     echo "<script> window.location.href='retrievePage.php' </script";
 }
 
-if (isset($_GET['prod_id'])) {
-    $prod_id = $_GET['prod_id'];
-
-    $getProd =  getProduct($prod_id);
-} else {
-    echo "<script> window.location.href='retrievePage.php' </script";
-}
-
 ?>
 
 
@@ -31,20 +23,28 @@ include "resources/header.php";
     include "resources/navigators.php";
     ?>
 
-    <h1>names: <?= $getUser[0] ['names'] ?></h1>
-    <h1>age: <?= $getUser[0] ['age'] ?></h1>
-    <h1>address: <?= $getUser[0] ['address'] ?></h1>
-    <h1>username: <?= $getUser[0] ['username'] ?></h1>
+   <h1>View and Update Page</h1>
+
+<form action="function/updateUser.php" method="POST">
+    <label for="names">Names</label>
+    <input name="names" type="text" value="<?= $getUser[0]['names'] ?>">
+    <label for="age">Age</label>
+    <input name="age" type="number" value="<?= $getUser[0]['age'] ?>">
+    <label for="address">Address</label>
+    <input name="address" type="text" value="<?= $getUser[0]['address'] ?>">
+    <label for="user_name">Username</label>
+    <input name="user_name" type="text" value="<?= $getUser[0]['username'] ?>">
+    <label for="password">Password</label>
+    <input name="password" type="text" value="<?= $getUser[0]['password'] ?>">
+
+    <input type="text" name="user_id" value="<?= $getUser[0]['user_id'] ?>"hidden>
+
+    <button>Edit</button>
+</form>
+
+</body>
+</html>
 
     <a href="">Edit</a>
-
-    <h1>pod_name: <?= $getProd[0]['pod_name'] ?></h1>
-    <h1>prod_quantity: <?= $getProd[0]['prod_quantity'] ?></h1>
-    <h1>prod_type: <?= $getProd[0]['prod_tyoe'] ?></h1>
-    <h1>prod_price: <?= $getProd[0]['prod_price'] ?></h1>
-    <h1>prod_date_added: <?= $getProd[0]['prod_date_added'] ?></h1>
-
-    <a href="">Edit</a>
-
 
 </body>
