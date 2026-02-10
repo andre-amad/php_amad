@@ -23,13 +23,29 @@ include "resources/header.php";
     include "resources/navigators.php";
     ?>
 
-    <h1>pod_name: <?= $getProd[0]['pod_name'] ?></h1>
-    <h1>prod_quantity: <?= $getProd[0]['prod_quantity'] ?></h1>
-    <h1>prod_type: <?= $getProd[0]['prod_tyoe'] ?></h1>
-    <h1>prod_price: <?= $getProd[0]['prod_price'] ?></h1>
-    <h1>prod_date_added: <?= $getProd[0]['prod_date_added'] ?></h1>
+      <form action="function/updateproduct.php" method="POST">
+    <label for="pod_name">Product Name</label>
+    <input name="pod_name" type="text" value="<?= $getProd[0]['pod_name'] ?>">
 
-    <a href="">Edit</a>
+    <label for="prod_quantity">Quantity</label>
+    <input name="prod_quantity" type="number" value="<?= $getProd[0]['prod_quantity'] ?>">
+
+    <label for="prod_tyoe">Product Type</label>
+    <input name="prod_tyoe" type="text" value="<?= $getProd[0]['prod_tyoe'] ?>">
+
+    <label for="prod_price">Price</label>
+    <input name="prod_price" type="number" step="0.01" value="<?= $getProd[0]['prod_price'] ?>">
+
+    <label for="prod_date_added">Date Added</label>
+    <input name="prod_date_added" type="date" value="<?= $getProd[0]['prod_date_added'] ?>">
+
+    <input type="hidden" name="prod_id" value="<?= $getProd[0]['prod_id'] ?>">
+
+
+    <input type="text" name="prod_id" value="<?= $getUser[0]['prod_id'] ?>"hidden>
+
+    <button>Edit</button>
+</form>
 
 
 </body>

@@ -14,12 +14,12 @@ if (isset($_POST['user_id'])) {
     $result = updateUSer($usertae, $name, $age, $address, $username, $password);
 
     if($result){
-        echo "<script> window.location.href='../retrievePage.php' </script";
+        echo "<script> window.location.href='../retrievePage.php' </script>";
     }else{
-        echo "<script> window.location.href='../viewPage.php?user_id'".$usertae." ' </script";
+        echo "<script> window.location.href='../viewPage.php?user_id'".$usertae." ' </script>";
     }
 }else{
-    echo "<script> window.location.href='retrievePage.php' </script";
+    echo "<script> window.location.href='../retrievePage.php' </script>";
 
 }
 ?>
