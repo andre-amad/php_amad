@@ -104,4 +104,31 @@ function updateproduct($usereu, $pod_name, $prod_quantity, $prod_tyoe, $prod_pri
   ]);
   return $stmnt;
 }
+
+function deleteUser($id)
+{
+  include "connection.php";
+  $sql = "SELECT * FROM user WHERE user_id = :id";
+   $stmnt = $conn->prepare($sql);
+   $stmnt->execute([
+    "id" => $id
+   ]);
+
+   return $stmnt;
+
+}
+
+function deleteProduct($id)
+{
+  include "connection.php";
+  $sql = "SELECT * FROM products WHERE user_id = :id";
+   $stmnt = $conn->prepare($sql);
+   $stmnt->execute([
+    "id" => $id
+   ]);
+
+   return $stmnt;
+
+}
+
 ?>

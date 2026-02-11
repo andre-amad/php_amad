@@ -5,6 +5,12 @@ $prod = retrieveAllProducts();
 
 // echo json_encode($list);
 
+if (isset($_GET['status'])) {
+if ($_GET['status'] == 'ok') 
+  echo "<script> alert('Value Deleted Successfully') </script>";
+}else if ($_GET['status'] == 'no') {
+ echo "<script> alert('Value Deleted Successfully') </script>";
+}
 ?>
 
 
@@ -43,7 +49,7 @@ include "resources/header.php";
             <td><?= $item["username"] ?> </td>
             <td><a href="viewpages.php?user_id=<?= $item['user_id'] ?>">view</a></td>
            <td>
-            <a href="">Delete</a>
+            <a href="function/deleteFunction.php?deleteFrom=user&id=<?= $item['user_id'] ?>">Delete</a>
            </td>
 
         </tr>
@@ -66,6 +72,8 @@ include "resources/header.php";
 
             <?php
             foreach ($prod as $prods) {
+
+            
             ?>
 
                 <tr>
@@ -76,7 +84,7 @@ include "resources/header.php";
                     <td><?= $prods["prod_date_added"] ?> </td>
                     <td><a href="viewProduct.php?prod_id=<?= $prods['prod_id'] ?>">view</a></td>
              <td>
-            <a href="">Delete</a>
+            <a href="function/deleteFunction.php?deleteFrom=Prooduct&id=<?= $prods['prod_id']?>">Delete</a>
            </td>
 
                 </tr>
